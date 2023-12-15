@@ -13,7 +13,7 @@ public enum DecemberCalender {
     STAR_DAYS(List.of(3, 10, 17, 24, 31, 25)),
     WEEKEND_DAYS(List.of(1, 2, 8, 9, 15, 16, 22, 23, 29, 30));
 
-
+    public static final int CHRISTMAS = 25;
     private final List<Integer> days;
 
     DecemberCalender(List<Integer> days) {

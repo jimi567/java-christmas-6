@@ -9,4 +9,6 @@ public interface VisitDate {
     boolean isStarDay();
 
     boolean isBeforeDday();
+
+    int calculateDaysUntilDday();
 }

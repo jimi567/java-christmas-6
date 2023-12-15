@@ -1,5 +1,6 @@
 package christmas.domain.customer.visitdate;
 
+import static christmas.consts.DecemberCalender.CHRISTMAS;
 import static christmas.consts.DecemberCalender.D_DAY_EVENT_DAYS;
 import static christmas.consts.DecemberCalender.EVENT_DAYS;
 import static christmas.consts.DecemberCalender.STAR_DAYS;
@@ -39,5 +40,9 @@ public class DecemberVisitDate implements VisitDate {
     @Override
     public boolean isBeforeDday() {
         return D_DAY_EVENT_DAYS.get().contains(date);
+    }
+
+    public int calculateDaysUntilDday() {
+        return CHRISTMAS - date;
     }
 }
