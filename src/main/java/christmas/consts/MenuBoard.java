@@ -53,4 +53,9 @@ public enum MenuBoard {
         return Arrays.stream(values()).filter(menuBoard -> menuBoard.getMenu().equals(menuBoard)).findFirst().get()
                 .getCategory();
     }
+
+    public static int getPriceByMenu(Menu menu) {
+        return Arrays.stream(values()).filter(menuBoard -> menuBoard.getMenu().equals(menuBoard)).findFirst().get()
+                .getPrice();
+    }
 }
