@@ -4,6 +4,7 @@ import static christmas.consts.DecemberCalender.D_DAY_EVENT_DAYS;
 import static christmas.consts.DecemberCalender.EVENT_DAYS;
 import static christmas.consts.DecemberCalender.STAR_DAYS;
 import static christmas.consts.DecemberCalender.WEEKEND_DAYS;
+import static christmas.consts.Error.ERROR_NOT_VALIDATE_VISIT_DATE;
 
 public class DecemberVisitDate implements visitDate {
 
@@ -17,7 +18,7 @@ public class DecemberVisitDate implements visitDate {
     @Override
     public void validate(int date) {
         if (!validateRange(date)) {
-            //에러 출력
+            ERROR_NOT_VALIDATE_VISIT_DATE.throwException();
         }
     }
 
