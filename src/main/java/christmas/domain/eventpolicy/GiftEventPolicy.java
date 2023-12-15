@@ -6,7 +6,7 @@ import christmas.domain.customer.Customer;
 import christmas.domain.menu.Menu;
 
 public class GiftEventPolicy implements EventPolicy {
-
+    private static final String NAME = "증정 이벤트: ";
     private static final int APPLICABLE_TOTAL_AMOUNT = 12_000;
     private static final Menu GIFT_MENU = new Menu("샴페인");
 
@@ -21,5 +21,10 @@ public class GiftEventPolicy implements EventPolicy {
             return getPriceByMenu(GIFT_MENU);
         }
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        return NAME;
     }
 }

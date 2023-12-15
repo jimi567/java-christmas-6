@@ -6,6 +6,7 @@ import christmas.domain.customer.Customer;
 
 public class WeekendDayEventPolicy implements EventPolicy {
 
+    private static final String NAME = "주말 할인: ";
     private static final int BENEFIT_AMOUNT = 2023;
 
     @Override
@@ -19,5 +20,10 @@ public class WeekendDayEventPolicy implements EventPolicy {
             return BENEFIT_AMOUNT * customer.orderMenu().countMenusByCategory(MAIN);
         }
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        return NAME;
     }
 }

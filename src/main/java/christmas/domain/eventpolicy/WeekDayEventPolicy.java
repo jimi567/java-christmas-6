@@ -5,7 +5,7 @@ import static christmas.consts.MenuBoard.DESSERT;
 import christmas.domain.customer.Customer;
 
 public class WeekDayEventPolicy implements EventPolicy {
-
+    private static final String NAME = "평일 할인: ";
     private static final int BENEFIT_AMOUNT = 2023;
 
     @Override
@@ -19,5 +19,10 @@ public class WeekDayEventPolicy implements EventPolicy {
             return customer.orderMenu().countMenusByCategory(DESSERT) * BENEFIT_AMOUNT;
         }
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        return NAME;
     }
 }
