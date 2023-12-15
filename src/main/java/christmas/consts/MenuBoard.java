@@ -1,6 +1,8 @@
 package christmas.consts;
 
 import christmas.domain.menu.Menu;
+import java.util.Arrays;
+import java.util.List;
 
 public enum MenuBoard {
     MUSHROOM_SOUP(new Menu("양송이수프"), 6_000, "애피타이저"),
@@ -42,4 +44,13 @@ public enum MenuBoard {
         return category;
     }
 
+    public static List<Menu> getSellingMenus() {
+        return Arrays.stream(values()).
+                map(MenuBoard::getMenu).toList();
+    }
+
+    public static String getCategoryByMenu(Menu menu) {
+        return Arrays.stream(values()).filter(menuBoard -> menuBoard.getMenu().equals(menuBoard)).findFirst().get()
+                .getCategory();
+    }
 }
