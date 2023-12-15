@@ -1,11 +1,11 @@
 package christmas.service;
 
 import static christmas.consts.EventBadge.getEventBadgeByBenefitAmount;
+import static christmas.consts.ViewFormat.decimalFormat;
 
 import christmas.domain.customer.Customer;
 import christmas.domain.eventpolicy.EventPolicy;
 import christmas.domain.eventpolicy.GiftEventPolicy;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,10 +53,5 @@ public class EventPlannerService {
             }
         }
         return history;
-    }
-
-    private String decimalFormat(int money) {
-        DecimalFormat decimalFormat = new DecimalFormat("###,###");
-        return decimalFormat.format(money);
     }
 }
