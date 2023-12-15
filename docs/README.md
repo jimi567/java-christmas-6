@@ -205,6 +205,10 @@
 
 ### const
 
++ Error
+
+> 예외문 관련된 상수 Enum
+
 + DecemberCalender
 
 > 주말, 평일, starDay 등 날짜를 상수로 관리하는 enum
