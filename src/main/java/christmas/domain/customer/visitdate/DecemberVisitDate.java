@@ -1,4 +1,4 @@
-package christmas.domain.menu.cusomer.visitdate;
+package christmas.domain.customer.visitdate;
 
 import static christmas.consts.DecemberCalender.D_DAY_EVENT_DAYS;
 import static christmas.consts.DecemberCalender.EVENT_DAYS;

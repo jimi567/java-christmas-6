@@ -1,4 +1,4 @@
-package christmas.domain.menu.cusomer.visitdate;
+package christmas.domain.customer.visitdate;
 
 public interface VisitDate {
 

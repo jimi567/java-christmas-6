@@ -1,4 +1,4 @@
-package christmas.domain.menu.cusomer.orderMenu;
+package christmas.domain.customer.orderMenu;
 
 import static christmas.consts.Error.ERROR_NOT_VALIDATE_ORDER_MENU;
 import static christmas.consts.MenuBoard.getCategoryByMenu;

@@ -1,9 +1,9 @@
-package christmas.domain.menu.cusomer;
+package christmas.domain.customer;
 
 import static christmas.consts.MenuBoard.getPriceByMenu;
 
-import christmas.domain.menu.cusomer.orderMenu.OrderMenu;
-import christmas.domain.menu.cusomer.visitdate.VisitDate;
+import christmas.domain.customer.orderMenu.OrderMenu;
+import christmas.domain.customer.visitdate.VisitDate;
 
 public record Customer(VisitDate visitDate, OrderMenu orderMenu) {
 
