@@ -55,7 +55,8 @@ public class OrderMenu {
     }
 
     public int countMenusByCategory(String category) {
-        return (int) orderMenu.keySet().stream().filter(menu -> getCategoryByMenu(menu).equals(category)).count();
+        return (int) orderMenu.keySet().stream().filter(menu -> getCategoryByMenu(menu).equals(category))
+                .mapToInt(menu -> orderMenu.get(menu)).sum();
     }
 
     @Override
