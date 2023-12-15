@@ -3,10 +3,13 @@ package christmas.domain.customer.orderMenu;
 import static christmas.consts.Error.ERROR_NOT_VALIDATE_ORDER_MENU;
 import static christmas.consts.MenuBoard.getCategoryByMenu;
 import static christmas.consts.MenuBoard.getSellingMenus;
+import static christmas.consts.ViewFormat.MENU_FORMAT;
 
 import christmas.domain.menu.Menu;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class OrderMenu {
@@ -53,5 +56,13 @@ public class OrderMenu {
 
     public int countMenusByCategory(String category) {
         return (int) orderMenu.keySet().stream().filter(menu -> getCategoryByMenu(menu).equals(category)).count();
+    }
+
+    @Override
+    public String toString() {
+        List<String> orderMenuInformation = new ArrayList<>();
+        orderMenu.forEach(
+                (menu, quantity) -> orderMenuInformation.add(String.format(MENU_FORMAT.get(), menu.name(), quantity)));
+        return String.join("\n", orderMenuInformation);
     }
 }
