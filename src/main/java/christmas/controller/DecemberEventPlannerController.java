@@ -91,7 +91,7 @@ public class DecemberEventPlannerController {
     }
 
     private void showBenefitHistory() {
-        outputView.printBenefitHistory(String.join("'\n", eventPlannerService.getTotalBenefitHistory(customer)));
+        outputView.printBenefitHistory(String.join("\n", eventPlannerService.getTotalBenefitHistory(customer)));
     }
 
     private void showTotalBenefitAmount() {

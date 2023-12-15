@@ -1,6 +1,7 @@
 package christmas.service;
 
 import static christmas.consts.EventBadge.getEventBadgeByBenefitAmount;
+import static christmas.consts.ViewFormat.NOTHING_MESSAGE;
 import static christmas.consts.ViewFormat.decimalFormat;
 
 import christmas.domain.customer.Customer;
@@ -48,11 +49,12 @@ public class EventPlannerService {
         List<String> history = new ArrayList<>();
         for (EventPolicy eventPolicy : eventPolicies) {
             if (eventPolicy.applicableEvent(customer)) {
-                history.add(eventPolicy.toString() + "-" + decimalFormat(eventPolicy.getBenefitAmount(customer)));
+                history.add(
+                        eventPolicy.toString() + "-" + decimalFormat(eventPolicy.getBenefitAmount(customer)) + '원');
             }
         }
         if (history.size() == 0) {
-            history.add("없음");
+            history.add(NOTHING_MESSAGE.get());
         }
         return history;
     }
