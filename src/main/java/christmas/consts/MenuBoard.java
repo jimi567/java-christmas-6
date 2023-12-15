@@ -50,12 +50,12 @@ public enum MenuBoard {
     }
 
     public static String getCategoryByMenu(Menu menu) {
-        return Arrays.stream(values()).filter(menuBoard -> menuBoard.getMenu().equals(menuBoard)).findFirst().get()
+        return Arrays.stream(values()).filter(menuBoard -> menuBoard.getMenu().equals(menu)).findFirst().get()
                 .getCategory();
     }
 
     public static int getPriceByMenu(Menu menu) {
-        return Arrays.stream(values()).filter(menuBoard -> menuBoard.getMenu().equals(menuBoard)).findFirst().get()
+        return Arrays.stream(values()).filter(menuBoard -> menuBoard.getMenu().equals(menu)).findFirst().get()
                 .getPrice();
     }
 }
