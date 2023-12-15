@@ -6,7 +6,7 @@ import static christmas.consts.DecemberCalender.STAR_DAYS;
 import static christmas.consts.DecemberCalender.WEEKEND_DAYS;
 import static christmas.consts.Error.ERROR_NOT_VALIDATE_VISIT_DATE;
 
-public class DecemberVisitDate implements visitDate {
+public class DecemberVisitDate implements VisitDate {
 
     private final int date;
 

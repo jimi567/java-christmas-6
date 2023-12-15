@@ -10,7 +10,7 @@ import java.util.HashMap;
 public class OrderMenu {
 
     private static final int MINIMUM_ORDER_COUNT = 1;
-    private static final int MAXIMUM_ORDER_COUNT = 20;
+    private static final int MAXIMUM_ORDER_TOTAL_COUNT = 20;
     private final HashMap<Menu, Integer> orderMenu;
 
     public OrderMenu(HashMap<Menu, Integer> orderMenu) {
@@ -23,6 +23,8 @@ public class OrderMenu {
             ERROR_NOT_VALIDATE_ORDER_MENU.throwException();
         } else if (!validateOrderCount(orderMenu)) {
             ERROR_NOT_VALIDATE_ORDER_MENU.throwException();
+        } else if (!validateOrderTotalCount(orderMenu)) {
+            ERROR_NOT_VALIDATE_ORDER_MENU.throwException();
         }
     }
 
@@ -32,7 +34,11 @@ public class OrderMenu {
 
     private boolean validateOrderCount(HashMap<Menu, Integer> orderMenu) {
         return orderMenu.values().stream()
-                .allMatch(count -> count >= MINIMUM_ORDER_COUNT && count <= MAXIMUM_ORDER_COUNT);
+                .allMatch(count -> count >= MINIMUM_ORDER_COUNT);
+    }
+
+    private boolean validateOrderTotalCount(HashMap<Menu, Integer> orderMenu) {
+        return orderMenu.values().stream().mapToInt(Integer::intValue).sum() <= MAXIMUM_ORDER_TOTAL_COUNT;
     }
 
     public int countMenusByCategory(String category) {

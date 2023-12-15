@@ -1,6 +1,6 @@
 package christmas.domain.menu.cusomer.visitdate;
 
-public interface visitDate {
+public interface VisitDate {
 
     void validate(int date);
 
