@@ -46,11 +46,13 @@ public class EventPlannerService {
 
     public List<String> getTotalBenefitHistory(Customer customer) {
         List<String> history = new ArrayList<>();
-
         for (EventPolicy eventPolicy : eventPolicies) {
             if (eventPolicy.applicableEvent(customer)) {
                 history.add(eventPolicy.toString() + "-" + decimalFormat(eventPolicy.getBenefitAmount(customer)));
             }
+        }
+        if (history.size() == 0) {
+            history.add("없음");
         }
         return history;
     }
