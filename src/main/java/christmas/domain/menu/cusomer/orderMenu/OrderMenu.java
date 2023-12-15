@@ -5,17 +5,27 @@ import static christmas.consts.MenuBoard.getCategoryByMenu;
 import static christmas.consts.MenuBoard.getSellingMenus;
 
 import christmas.domain.menu.Menu;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 public class OrderMenu {
 
     private static final int MINIMUM_ORDER_COUNT = 1;
     private static final int MAXIMUM_ORDER_TOTAL_COUNT = 20;
-    private final HashMap<Menu, Integer> orderMenu;
+    private final Map<Menu, Integer> orderMenu;
 
     public OrderMenu(HashMap<Menu, Integer> orderMenu) {
         validate(orderMenu);
         this.orderMenu = orderMenu;
+    }
+
+    public Map<Menu, Integer> getOrderMenu() {
+        return Collections.unmodifiableMap(orderMenu);
+    }
+
+    public int countMenu(Menu menu) {
+        return orderMenu.get(menu);
     }
 
     private void validate(HashMap<Menu, Integer> orderMenu) {
@@ -44,5 +54,4 @@ public class OrderMenu {
     public int countMenusByCategory(String category) {
         return (int) orderMenu.keySet().stream().filter(menu -> getCategoryByMenu(menu).equals(category)).count();
     }
-
 }
